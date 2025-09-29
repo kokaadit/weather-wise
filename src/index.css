@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* WeatherWise Design System - Energy & Nature Inspired */
+
+@layer base {
+  :root {
+    /* Brand Colors - Nature & Energy Theme */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 14%;
+
+    /* Primary: Soft Green (#1F8A70) */
+    --primary: 168 66% 33%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 168 66% 45%;
+    --primary-dark: 168 66% 25%;
+
+    /* Accent: Warm Yellow (#F6C85F) */
+    --accent: 44 89% 67%;
+    --accent-foreground: 215 25% 14%;
+    --accent-light: 44 89% 75%;
+    --accent-dark: 44 89% 55%;
+
+    /* Neutral: Off-white (#F7FAFC) */
+    --neutral: 210 17% 98%;
+    --neutral-foreground: 215 25% 14%;
+
+    /* Secondary: Soft slate tones */
+    --secondary: 215 16% 95%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 215 16% 95%;
+    --muted-foreground: 215 13% 55%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 16% 90%;
+    --input: 215 16% 90%;
+    --ring: 168 66% 33%;
+
+    /* Beautiful Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--neutral)) 100%);
+
+    /* Elegant Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -2px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -4px hsl(var(--primary) / 0.1);
+    --shadow-large: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 8px 10px -6px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.3);
+
+    /* Smooth Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    /* Sidebar variables for compatibility */
+    --sidebar-background: 210 20% 98%;
+    --sidebar-foreground: 215 25% 14%;
+    --sidebar-primary: 168 66% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 16% 95%;
+    --sidebar-accent-foreground: 215 25% 25%;
+    --sidebar-border: 215 16% 90%;
+    --sidebar-ring: 168 66% 33%;
+  }
+
+  .dark {
+    /* Dark mode - Energy efficient theme */
+    --background: 215 25% 14%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 25% 16%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 25% 16%;
+    --popover-foreground: 210 20% 98%;
+
+    /* Primary: Brighter green for dark mode */
+    --primary: 168 66% 45%;
+    --primary-foreground: 215 25% 14%;
+    --primary-light: 168 66% 55%;
+    --primary-dark: 168 66% 35%;
+
+    /* Accent: Softer yellow for dark mode */
+    --accent: 44 89% 65%;
+    --accent-foreground: 215 25% 14%;
+    --accent-light: 44 89% 75%;
+    --accent-dark: 44 89% 55%;
+
+    --neutral: 215 25% 16%;
+    --neutral-foreground: 210 20% 98%;
+
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 20% 20%;
+    --muted-foreground: 215 13% 65%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 168 66% 45%;
+
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--neutral)) 100%);
+
+    /* Dark sidebar variables */
+    --sidebar-background: 215 25% 14%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 168 66% 45%;
+    --sidebar-primary-foreground: 215 25% 14%;
+    --sidebar-accent: 215 20% 20%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 215 20% 25%;
+    --sidebar-ring: 168 66% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    transition: var(--transition-smooth);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Weather Card Components */
+  .weather-card {
+    @apply rounded-2xl p-6 shadow-lg;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-smooth);
+  }
+
+  .weather-card:hover {
+    box-shadow: var(--shadow-large);
+    transform: translateY(-2px);
+  }
+
+  /* Tip Chips */
+  .tip-chip {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm;
+    background: hsl(var(--primary) / 0.1);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    transition: var(--transition-bounce);
+  }
+
+  .tip-chip:hover {
+    background: hsl(var(--primary) / 0.15);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Hero Button */
+  .btn-hero {
+    @apply px-8 py-4 rounded-xl font-medium text-white;
+    background: var(--gradient-hero);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-hero:hover {
+    box-shadow: var(--shadow-large), var(--shadow-glow);
+    transform: translateY(-1px);
+  }
+
+  /* Loading Animation */
+  .loading-pulse {
+    @apply animate-pulse;
+  }
+
+  /* Weather Icons */
+  .weather-icon {
+    @apply w-12 h-12 flex items-center justify-center rounded-full;
+    background: hsl(var(--accent) / 0.2);
+    color: hsl(var(--accent-dark));
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
