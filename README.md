@@ -9,7 +9,7 @@ WeatherWise is a full-stack web application that fetches real-time weather data 
 ## ✨ Features
 
 - **Real-time Weather Data**: Integration with WeatherAPI.com
-- **AI-Powered Tips**: Local LLM (Ollama) generates personalized energy-saving suggestions
+- **AI-Powered Tips**: Local LLM (Gemini) generates personalized energy-saving suggestions
 - **Beautiful UI**: Modern, responsive design with soft green & yellow palette
 - **Mobile-First**: Fully responsive design that works on all devices
 - **Dark/Light Mode**: Energy-efficient theme switching
